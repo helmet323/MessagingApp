@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600&display=swap%22");
+
+.form-container {
+    font-family: "Open Sans", sans-serif;
+    margin: auto;
+    width: 50%;
+    height: 100%;
+    display: block;
+    margin-top: 30px;
+
+    background-color: white;
+    border-radius: 2px;
+
+    .fields {
+        padding: 20px;
+        margin: 0 20px;
+
+        .content {
+
+            .title {
+                font-weight: bold;
+                font-size: 24px;
+            }
+
+            form {
+                .item {
+                    display: flex;
+                    flex-direction: column;
+                    padding-bottom: 15px;
+
+                    label {
+                        padding-bottom: 5px;
+                    }
+
+                    input {
+                        height: 30px;
+                        border-radius: 8px;
+                        border-width: 0.1px;
+                        opacity: 40%;
+                    }
+                }
+
+                .submit {
+                    margin: auto;
+                    width: fit-content;
+
+                    button {
+                        height: 30px;
+                        width: 80px;
+                    }
+                }
+            }
+
+            .account{
+                display: flex;
+                font-size: 15px;
+
+
+                p {
+                    
+                }
+
+                span{
+                    display: block;
+                    margin-block-start: 1em;
+                    margin-block-end: 1em;
+                    margin-left: 10px;
+                    justify-content: flex-end;
+                    color: blue;
+                    
+                }
+            }
+        }
+    }
+}
