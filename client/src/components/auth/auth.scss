@@ -1,19 +1,17 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600&display=swap%22");
 
 .form-container {
-    font-family: "Open Sans", sans-serif;
-    margin: auto;
-    width: 50%;
-    height: 100%;
-    display: block;
-    margin-top: 30px;
-
-    background-color: white;
-    border-radius: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: #67caad;
 
     .fields {
-        padding: 20px;
-        margin: 0 20px;
+        width: 40%;
+        background-color: rgb(255, 255, 255);
+        border-radius: 15px;
+        padding: 10px 50px;
 
         .content {
 
@@ -29,12 +27,13 @@
                     padding-bottom: 15px;
 
                     label {
+                        font-weight: 400;
                         padding-bottom: 5px;
                     }
 
                     input {
                         height: 30px;
-                        border-radius: 8px;
+                        border-radius: 4px;
                         border-width: 0.1px;
                         opacity: 40%;
                     }
@@ -45,29 +44,39 @@
                     width: fit-content;
 
                     button {
+                        font-size: 15px;
+                        border-color: #67caad;
+                        color: #67caad;
                         height: 30px;
                         width: 80px;
+                        cursor: pointer;
+                        background-color: white;
+                        border-style: solid;
+
+                        &:hover {
+                            background-color: #bababa;
+                            color: #00aa77;
+                        }
                     }
                 }
             }
 
-            .account{
+            .account {
                 display: flex;
                 font-size: 15px;
 
-
                 p {
-                    
                 }
 
-                span{
+                span {
                     display: block;
                     margin-block-start: 1em;
                     margin-block-end: 1em;
                     margin-left: 10px;
                     justify-content: flex-end;
                     color: blue;
-                    
+                    cursor: pointer;
+                    text-decoration: underline;
                 }
             }
         }
