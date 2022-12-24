@@ -7,7 +7,7 @@ import './App.css';
 
 const apiKey = 'kkkhqz2qtsx6';
 const client = StreamChat.getInstance(apiKey);
-const authToken = false;
+const authToken = true;
 
 const App = () => {
   if(!authToken) return <Auth />;
