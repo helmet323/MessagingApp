@@ -2,9 +2,9 @@ import React from 'react';
 import { ChannelList, useChatContext } from 'stream-chat-react';
 import Cookies from 'universal-cookie';
 
-import { ChannelSearch, TeamChannelList, TeamChannelPreview } from 'stream-chat-react';
+import { ChannelSearch, TeamChannelList, TeamChannelPreview } from './';
 
-import './ChannelListContainer.css'
+import '../App.css'
 
 import WMIcon from '../assets/wm.png'
 import LogoutIcon from '../assets/logout.png'
@@ -13,14 +13,14 @@ const SideBar = () => (
     <body>
         <nav className="channel-list__sidebar">
             <ul className="sidebar__container">
-                <li className="sidebar__icon green-back">
+                <li className="sidebar__icon back">
                     <img src={WMIcon} alt="Wastemen" width="40" />
                     <div className="popper">
                         <h4 className="popper-text">Wastemen</h4>
                     </div>
                 </li>
                 <li className="divider"></li>
-                <li className="sidebar__icon green-back">
+                <li className="sidebar__icon back">
                     <img src={LogoutIcon} alt="Logout" width="25" />
                     <div className="popper">
                         <h4 className="popper-text">Logout</h4>
@@ -43,6 +43,39 @@ const ChannelListContainer = () => {
         <SideBar />
         <div className="channel-list__list__wrapper">
             <CompanyHeader />
+            <ChannelSearch />
+            <ChannelList
+                filters={{}}
+                channelRenderFilterFn={ () => {}}
+                List={(listProps) => (
+                    <TeamChannelList
+                        {... listProps}
+                        type="team"
+                    />
+                )}
+                Preview={(previewProps) => {
+                    <TeamChannelPreview
+                        {...previewProps}
+                        type="team"
+                    />
+                }}
+            />
+            <ChannelList
+                filters={{}}
+                channelRenderFilterFn={ () => {}}
+                List={(listProps) => (
+                    <TeamChannelList
+                        {... listProps}
+                        type="messaging"
+                    />
+                )}
+                Preview={(previewProps) => {
+                    <TeamChannelPreview
+                        {...previewProps}
+                        type="messaging"
+                    />
+                }}
+            />
         </div>
     </>
   );

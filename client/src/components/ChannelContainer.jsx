@@ -3,7 +3,7 @@ import React from 'react'
 const ChannelContainer = () => {
   return (
     <div>
-        Channel Container
+      Channel Container
     </div>
   );
 }
