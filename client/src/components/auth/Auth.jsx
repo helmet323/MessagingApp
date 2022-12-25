@@ -63,7 +63,7 @@ const Auth = () => {
                     <form onSubmit={handleSubmit}>
                         {isSignup && (
                             <div className="item">
-                                <label htmlfor="fullName">Full Name</label>
+                                <label htmlFor="fullName">Full Name</label>
                                 <input
                                     name="fullName"
                                     type="text"
@@ -74,7 +74,7 @@ const Auth = () => {
                             </div>
                         )}
                         <div className="item">
-                            <label htmlfor="username">Username</label>
+                            <label htmlFor="username">Username</label>
                             <input
                                 name="username"
                                 type="text"
@@ -85,7 +85,7 @@ const Auth = () => {
                         </div>
                         {isSignup && (
                             <div className="item">
-                                <label htmlfor="phoneNumber">
+                                <label htmlFor="phoneNumber">
                                     Phone Number
                                 </label>
                                 <input
@@ -99,7 +99,7 @@ const Auth = () => {
                         )}
                         {isSignup && (
                             <div className="item">
-                                <label htmlfor="avatarURL">Avatar URL</label>
+                                <label htmlFor="avatarURL">Avatar URL</label>
                                 <input
                                     name="avatarURL"
                                     type="text"
@@ -110,7 +110,7 @@ const Auth = () => {
                             </div>
                         )}
                         <div className="item">
-                            <label htmlfor="passwordL">Password</label>
+                            <label htmlFor="passwordL">Password</label>
                             <input
                                 name="password"
                                 type="password"
@@ -121,7 +121,7 @@ const Auth = () => {
                         </div>
                         {isSignup && (
                             <div className="item">
-                                <label htmlfor="confirmPassword">
+                                <label htmlFor="confirmPassword">
                                     Confirm Password
                                 </label>
                                 <input
