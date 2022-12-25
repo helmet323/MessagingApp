@@ -3,39 +3,63 @@ import Cookies from "universal-cookie";
 import axios from "axios";
 import "./auth.scss";
 
-// import signinImage from '../assets/signup.jpg'
+const cookies = new Cookies();
 
 const initialState = {
-    fullName: '',
-    username: '',
-    password: '',
-    confirmPassword: '',
-    phoneNumber: '',
-    avatarURL: '',
-}
+    fullName: "",
+    username: "",
+    password: "",
+    confirmPassword: "",
+    phoneNumber: "",
+    avatarURL: "",
+};
 
 const Auth = () => {
     const [form, setForm] = useState(initialState);
     const [isSignup, setIsSignup] = useState(true);
 
     const handleChange = (e) => {
-        setForm({ ... form, [e.target.name]: e.target.value});
+        setForm({ ...form, [e.target.name]: e.target.value });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
+
+        const { fullName, username, password, phoneNumber, avatarURL } = form;
         
-    }
+        const URL = 'http://localhost:5000/auth';
+
+        const { data : { token, userId, hashedPassword } } = await axios.post(`${URL}/${isSignup ? 'signup' : 'login'}`, {
+            username, password, fullName, phoneNumber, avatarURL,
+        })
+
+        cookies.set('token', token);
+        cookies.set('username', username);
+        cookies.set('fullName', fullName);
+        cookies.set('userId', userId);
+
+        if (isSignup){
+            cookies.set('phoneNumber', phoneNumber);
+            cookies.set('avatarURL', avatarURL);
+            cookies.set('hashedPassword', hashedPassword);
+        }
+
+        window.location.reload();
+    };
+
+
 
     const switchMode = () => {
-        setIsSignup((prevIsSignup) => !prevIsSignup)
-    }
+        setIsSignup((prevIsSignup) => !prevIsSignup);
+    };
 
     return (
         <div className="form-container">
             <div className="fields">
                 <div className="content">
-                    <p className="title">{isSignup ? "Create your account" : "Sign In"}</p>
+                    <p className="title">
+                        {isSignup ? "Create your account" : "Sign In"}
+                    </p>
                     <form onSubmit={handleSubmit}>
                         {isSignup && (
                             <div className="item">
@@ -116,20 +140,15 @@ const Auth = () => {
                     <div className="account">
                         <p>
                             {isSignup
-                            ? "Already have an account? "
-                            : "Don't have an account? "
-                        }
+                                ? "Already have an account? "
+                                : "Don't have an account? "}
                         </p>
                         <span onClick={switchMode}>
-                            {isSignup ? 'Sign In' : 'Sign Up'}
+                            {isSignup ? "Sign In" : "Sign Up"}
                         </span>
-                        
                     </div>
                 </div>
             </div>
-            {/* <div className="form-container_image">
-                <img src={signinImage} alt="sign in" />
-            </div> */}
         </div>
     );
 };
