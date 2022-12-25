@@ -25,7 +25,7 @@ const SideBar = ({ logout }) => (
             <h4 className="popper-text">Wastemen</h4>
           </div>
         </li>
-        <li className="divider"></li>
+        <li className="divider"></li> 
         <li className="sidebar__icon green-back">
           <div className="icon1__inner" onClick={logout}>
             <img src={LogoutIcon} alt="Logout" width="25" />
