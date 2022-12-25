@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { ChannelList, useChatContext } from 'stream-chat-react';
 import Cookies from 'universal-cookie';
@@ -31,13 +32,26 @@ const SideBar = () => (
     </body>
 )
 
+
 const CompanyHeader = () => (
-    <div className="channel-list__header">
-        <p className="channel-list__header__text">Waste My Time</p>
-    </div>
-)
+  <div className="channel-list__header">
+    <p className="channel-list__header__text">Waste My Time</p>
+  </div>
+);
 
 const ChannelListContainer = () => {
+  const logout = () => {
+    cookies.remove("token");
+    cookies.remove("userId");
+    cookies.remove("username");
+    cookies.remove("fullName");
+    cookies.remove("avatarURL");
+    cookies.remove("hashedPassword");
+    cookies.remove("phoneNumber");
+
+    window.location.reload();
+  };
+  
   return (
     <div className='channel-list__container'>
         <SideBar />
@@ -79,6 +93,6 @@ const ChannelListContainer = () => {
         </div>
     </div>
   );
-}
+};
 
 export default ChannelListContainer;
