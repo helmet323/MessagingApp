@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useChatContext } from 'stream-chat-react';
 
-import SearchIcon from '../assets/search.png'
+import SearchIcon from '../assets/search.png';
 
 const ChannelSearch = () => {
     const [query, setQuery] = useState('');
@@ -17,7 +17,7 @@ const ChannelSearch = () => {
         }
     }
 
-    const onSearch = (event ) => {
+    const onSearch = ( event ) => {
         event.preventDefault();
 
         setLoading(true);
@@ -29,7 +29,7 @@ const ChannelSearch = () => {
         <div className="channel-search__container">
             <div classname="channel-search__input__wrapper">
                 <div className="channel-search__input__icon">
-                    <SearchIcon />
+                   <img src={SearchIcon} alt="Search" />
                 </div>
                 <input
                     className="channel-search__input__text"

@@ -5,7 +5,7 @@ import Cookies from 'universal-cookie';
 
 import { ChannelSearch, TeamChannelList, TeamChannelPreview } from './';
 
-import '../App.css'
+import '../App.css';
 
 import WMIcon from '../assets/wm.png'
 import LogoutIcon from '../assets/logout.png'
@@ -52,9 +52,9 @@ const ChannelListContainer = () => {
 
     window.location.reload();
   };
+  
   return (
-    <>
-
+    <div className='channel-list__container'>
         <SideBar />
         <div className="channel-list__list__wrapper">
             <CompanyHeader />
@@ -92,8 +92,7 @@ const ChannelListContainer = () => {
                 }}
             />
         </div>
-
-    </>
+    </div>
   );
 };
 

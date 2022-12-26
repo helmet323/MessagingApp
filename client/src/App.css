@@ -2,7 +2,7 @@
 
 :root {
     --color-royal-blue: #83a9f6;
-    --color-green: #69c4ac;
+    --color-green: #67caaccb;
     --color-teal: #67caad;
 	--color-white: #ffffff;
 	--color-black: #000000;
@@ -13,7 +13,7 @@
 body {
     background: var(--color-white);
     font-family: "Open Sans", sans-serif;
-    color: var(--color-teal);
+    color: var(--color-black);
     min-height: 100vh;
 }
 
@@ -123,14 +123,51 @@ ul {
 /* channel list */
 .channel-list__container {
     display: flex;
-    /* height: 800px; */
     height: 100%;
     box-shadow: inset 1px 0px 0px rgba(0, 0, 0, 0.1);
   }
 
 .channel-list__list__wrapper {
     display: flex;
+    align-items: center;
     flex-direction: column;
-    background: var(--primary-color);
+    background: var(--color-green);
+    margin-left: calc(2em + 48px); 
     width: 240px;
   }
+
+.channel-list__header {
+    height: 62px;
+    color: var(--color-black);
+    font-weight: bold;
+}
+
+.channel-search__input__icon img {
+    height: 20px;
+    width: 20px;
+    padding-top: 3px;
+    padding-right: 8px;
+}
+
+.channel-search__input__icon {
+    float: left;
+}
+
+.team-channel-list__message {
+    font-size: 14px;
+    padding-left: 15px;
+    padding-right: 10px;
+}
+
+.channel__container {
+    display: flex;
+    flex-direction: column;
+    background: var(--color-white);
+    margin-left: calc(2em + 288px);
+}
+
+/* app wrapper */
+
+.app__wrapper {
+    display: flex;
+}
