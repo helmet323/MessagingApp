@@ -10,7 +10,7 @@ import '../App.css';
 import WMIcon from '../assets/wm.png'
 import LogoutIcon from '../assets/logout.png'
 
-const SideBar = () => (
+const SideBar = ({ logout }) => (
     <body>
         <nav className="channel-list__sidebar">
             <ul className="sidebar__container">
@@ -22,7 +22,9 @@ const SideBar = () => (
                 </li>
                 <li className="divider"></li>
                 <li className="sidebar__icon back">
-                    <img src={LogoutIcon} alt="Logout" width="25" />
+                    <div className="icon1__inner" onClick={logout}>
+                        <img src={LogoutIcon} alt="Logout" width="25" />
+                    </div>
                     <div className="popper">
                         <h4 className="popper-text">Logout</h4>
                     </div>
@@ -31,7 +33,6 @@ const SideBar = () => (
         </nav>
     </body>
 )
-
 
 const CompanyHeader = () => (
   <div className="channel-list__header">
