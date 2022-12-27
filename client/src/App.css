@@ -127,7 +127,8 @@ ul {
     box-shadow: inset 1px 0px 0px rgba(0, 0, 0, 0.1);
   }
 
-.channel-list__list__wrapper {
+.channel-list__wrapper {
+    position: relative;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -171,3 +172,17 @@ ul {
 .app__wrapper {
     display: flex;
 }
+
+
+.team-channel-list__header{
+    width: inherit;
+    display: flex;
+    align-items: center;
+}
+.team-channel-list__header p{
+    float: left;
+    margin-left: 10px;
+    width: 85%;
+     
+}
+
