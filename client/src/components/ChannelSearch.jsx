@@ -11,11 +11,13 @@ const ChannelSearch = () => {
         try {
             //TODO: fetch channels
         } catch (error) {
+
             setQuery("");
         }
     };
 
     const onSearch = (event) => {
+
         event.preventDefault();
 
         setLoading(true);
