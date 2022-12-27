@@ -132,7 +132,8 @@ ul {
     box-shadow: inset 1px 0px 0px rgba(0, 0, 0, 0.1);
   }
 
-.channel-list__list__wrapper {
+.channel-list__wrapper {
+    position: relative;
     display: flex;
     align-items: center;
     flex-direction: column;
