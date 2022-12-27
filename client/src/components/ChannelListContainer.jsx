@@ -10,6 +10,8 @@ import '../App.css';
 import WMIcon from '../assets/wm.png'
 import LogoutIcon from '../assets/logout.png'
 
+const cookies = new Cookies();
+
 const SideBar = ({ logout }) => (
     <body>
         <nav className="channel-list__sidebar">
@@ -55,7 +57,7 @@ const ChannelListContainer = () => {
   
   return (
     <div className='channel-list__container'>
-        <SideBar />
+        <SideBar logout={logout}/>
         <div className="channel-list__list__wrapper">
             <CompanyHeader />
             <ChannelSearch />
