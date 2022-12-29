@@ -5,7 +5,7 @@ const TeamChannelPreview = ({ channel, type }) => {
     const { channel: activeChannel, client } = useChatContext();
 
     const ChannelPreview = () => (
-        <p className="channel-peview__item">
+        <p className="channel-preview__item">
             # {channel?.data?.name || channel?.data?.id}
         </p>
     );
